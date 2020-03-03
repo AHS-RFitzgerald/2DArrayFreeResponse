@@ -1,0 +1,28 @@
+1a. 
+	private boolean toBeLabeled(int r, int c, boolean[][] blackSquares){
+		if(blackSquares[r][c] == false){
+			if(blackSquares[r-1][c] == true || blackSquares[r][c-1] == true){
+				return true;
+			}else{
+				return false;
+			}
+		}else{
+			return false;
+		}
+	}
+	
+1b. 
+	public Crossword(boolean[][] blackSquares){
+	
+		puzzle = new Square[blackSquares.length][blackSquares[0].length];
+		int num = 1;
+		
+		for(int x = 0; x < blackSquares.length; x++){
+			for(int y = 0; y < blackSquares[0].length; y++){
+				if(blackSquares[x][y].toBeLabled == true){
+					puzzle[x][y] = num;
+					num++;
+				}
+			}
+		}
+	}
